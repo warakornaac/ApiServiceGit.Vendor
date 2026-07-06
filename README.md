@@ -39,10 +39,6 @@ Copy the provided **`Web.config`** file and place it in the project root directo
     Web.config
 ```
 
-> **Example**
-
-![Project Structure](docs/images/project-path.png)
-
 ---
 
 ### Step 3: Run the API Service
