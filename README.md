@@ -1,61 +1,92 @@
 # ApiService
 C# .NET API service for Bricks vendor.
 
-Getting Started
+# Getting Started
 
 Follow the steps below to set up and verify the API service.
 
-Prerequisites
-Visual Studio
-SQL Server
-Postman
+## Prerequisites
 
-Setup Instructions
-Step 1: Execute SQL Scripts
+* Visual Studio
+* SQL Server
+* Postman
 
-Run all SQL scripts located in the Script for SQL Server folder to create the required database objects.
+## Setup Instructions
 
-Folder Structure
+### Step 1: Execute SQL Scripts
 
+Run all SQL scripts located in the **`Script for SQL Server`** folder to create the required database objects.
+
+> **Folder Structure**
+
+```text
 Script for SQL Server/
 ├── 01_Create_Tables.sql
 ├── 02_Create_StoredProcedures.sql
 └── 03_Create_Function
-Step 2: Configure Web.config
+```
 
-Copy the provided Web.config file and place it in the project root directory, replacing the existing file if necessary.
+---
 
-Project Path
+### Step 2: Configure `Web.config`
 
+Copy the provided **`Web.config`** file and place it in the project root directory, replacing the existing file if necessary.
+
+> **Project Path**
+
+```text
 <Project Root>\
     Web.config
+```
 
-Example
+> **Example**
 
+![Project Structure](docs/images/project-path.png)
 
-Step 3: Run the API Service
-Open the solution in Visual Studio.
-Build the solution.
-Set ApiService as the Startup Project.
-Run the project using IIS Express or Local IIS.
-Step 4: Verify the API
+---
 
-Use Postman to test the IndexAuthen endpoint.
+### Step 3: Run the API Service
 
-Method
+1. Open the solution in **Visual Studio**.
+2. Build the solution.
+3. Set **ApiService** as the Startup Project.
+4. Run the project using **IIS Express** or **Local IIS**.
 
+---
+
+### Step 4: Verify the API
+
+Use **Postman** to test the **`IndexAuthen`** endpoint.
+
+**Method**
+
+```http
 POST /api/Promotion/IndexAuthen
+```
 
-Request Body
+**Request Body**
 
+```json
 {
     "keyword": "test"
 }
+```
 
-Expected Response
+**Expected Response**
 
+```json
 {
     "Success": true,
     "Message": "FN IndexAuthen Success",
     "Keyword": "test"
 }
+```
+
+---
+
+## Notes
+
+* Ensure all SQL scripts have been executed successfully before starting the application.
+* Verify that the database connection string in **`Web.config`** is configured correctly.
+* If the `keyword` parameter is not provided, the API will return a validation message indicating that the parameter is required.
+
