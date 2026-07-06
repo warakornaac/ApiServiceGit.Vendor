@@ -84,9 +84,3 @@ POST /api/Promotion/IndexAuthen
 
 ---
 
-## Notes
-
-* Ensure all SQL scripts have been executed successfully before starting the application.
-* Verify that the database connection string in **`Web.config`** is configured correctly.
-* If the `keyword` parameter is not provided, the API will return a validation message indicating that the parameter is required.
-
